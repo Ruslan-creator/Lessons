@@ -9,13 +9,11 @@ Four — 4
 записываться в новый текстовый файл.
 '''
 
-
-
 translate = {' One':' Один', 'Two':'Два', 'Three':'Три', 'Four':'Четыре'}
-with open(r'C:\Users\Руслан\Desktop\Lesson_2_4.txt', 'r', encoding='UTF-8') as file:
+with open(r'Lesson_2_4.txt', 'r', encoding='UTF-8') as file:
     content = file.readlines()
     new_content = [f'{translate[line.split(" — ")[0]]} - {line.split(" — ")[-1]}' for line in content]
     print(*new_content)
 
-with open(r'C:\Users\Руслан\Desktop\Lesson_2_4_1.txt', 'w', encoding='UTF-8') as files:
+with open(r'Lesson_2_4_1.txt', 'w', encoding='UTF-8') as files:
     files.writelines(new_content)

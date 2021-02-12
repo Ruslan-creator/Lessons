@@ -10,14 +10,18 @@
 Физкультура: — 30(пр) —
 Пример словаря: {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 '''
-
-
-
-with open(r'C:\Users\Руслан\Desktop\Lesson_2_6.txt', 'r', encoding='UTF-8') as file:
+with open(r'Lesson_2_6.txt', 'r', encoding='UTF-8') as file:
     content = file.readlines()
-    res = { }
-    for i in (content):
-        subject, number1, lection, number2, practical, number3, laboratory = i.split()
-        numbers = float(number1) + float(number2) + float(number3)
-        res[subject] = numbers
-    print(res)
+    dict = { }
+    for el in content:
+        num = el.replace(' —', '').replace('(л)', '')\
+            .replace('(пр)', '').replace('(лаб)', '')\
+            .replace('.', '').replace(':', '')\
+            .split()
+        a = 0
+        print(num)
+        for i in range(1, len(num)):
+            a += int(num[i])
+        dict[num[0]] = a
+    print(dict)
+

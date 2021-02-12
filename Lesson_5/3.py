@@ -9,7 +9,7 @@
 '''
 
 
-with open(r'C:\Users\Руслан\Desktop\Lesson_2_3.txt', 'r', encoding='UTF-8') as file:
+with open(r'Lesson_2_3.txt', 'r', encoding='UTF-8') as file:
     content = file.readlines()
     person_with_low_salary = []
     average_salary = 0
