@@ -12,21 +12,14 @@
 
 
 class Road:
-    _length = None
-    _width = None
-    weigth = None
-    tickness = None
-
     def __init__(self, length, width):
-        self.length = length
-        self.width = width
+        self.__length = length
+        self.__width = width
 
-    def intake(self):
-        self.weigth = 25
-        self.tickness = 0.005
-        intake = self.length * self.width * self.weigth * self.tickness
+    def intake(self, weight, tickness):
+        intake = self.__length*self.__width*weight*tickness
         return f'Расчет массы асфальта, необходимого для покрытия, составил - {round(intake)} т.'
 
 
 a = Road(20, 5000)
-print(a.intake())
+print(a.intake(25, 0.05))
